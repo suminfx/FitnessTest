@@ -19,11 +19,12 @@ import com.sumin.fitnesstest.data.ScheduleEntry;
 import com.sumin.fitnesstest.utils.JSONUtils;
 import com.sumin.fitnesstest.utils.NetworkUtils;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<JSONObject> {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<JSONArray> {
 
     //Views
     private ScheduleAdapter scheduleAdapter;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @NonNull
     @Override
-    public Loader<JSONObject> onCreateLoader(int i, @Nullable Bundle bundle) {
+    public Loader<JSONArray> onCreateLoader(int i, @Nullable Bundle bundle) {
         return new NetworkUtils.JSONFromWebLoader(this, new NetworkUtils.JSONFromWebLoader.OnLoadingProcessListener() {
             @Override
             public void onProcessStart() {
@@ -100,11 +101,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<JSONObject> loader, JSONObject jsonObject) {
-        if (jsonObject == null) {
+    public void onLoadFinished(@NonNull Loader<JSONArray> loader, JSONArray jsonArray) {
+        if (jsonArray == null) {
             Toast.makeText(this, R.string.warning_error_with_loading, Toast.LENGTH_SHORT).show();
         }
-        List<ScheduleEntry> scheduleEntries = JSONUtils.getScheduleFromJSON(jsonObject);
+        List<ScheduleEntry> scheduleEntries = JSONUtils.getScheduleFromJSON(jsonArray);
         if (!scheduleEntries.isEmpty()) {
             mainViewModel.deleteAllData();
             for (ScheduleEntry scheduleEntry : scheduleEntries) {
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     @Override
-    public void onLoaderReset(@NonNull Loader<JSONObject> loader) {
+    public void onLoaderReset(@NonNull Loader<JSONArray> loader) {
 
     }
 

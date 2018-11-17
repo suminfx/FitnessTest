@@ -33,7 +33,12 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     public void onBindViewHolder(@NonNull ScheduleViewHolder scheduleViewHolder, int i) {
         ScheduleEntry scheduleEntry = scheduleEntries.get(i);
         scheduleViewHolder.textViewTitle.setText(scheduleEntry.getTitle());
-        scheduleViewHolder.textViewDescription.setText(scheduleEntry.getDescription());
+        String description = scheduleEntry.getDescription();
+        scheduleViewHolder.textViewDescription.setText(description);
+        if (description.trim().isEmpty()) {
+            scheduleViewHolder.textViewDescription.setVisibility(View.GONE);
+            scheduleViewHolder.textViewLabelDescription.setVisibility(View.GONE);
+        }
         scheduleViewHolder.textViewTeacherName.setText(scheduleEntry.getTeacherName());
         scheduleViewHolder.textViewNumberOfRoom.setText(scheduleEntry.getNameOfRoom());
         String time = String.format("%s - %s", scheduleEntry.getTimeStart(), scheduleEntry.getTimeEnd());
@@ -76,6 +81,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     class ScheduleViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewTitle;
+        private TextView textViewLabelDescription;
         private TextView textViewDescription;
         private TextView textViewTeacherName;
         private TextView textViewNumberOfRoom;
@@ -85,6 +91,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         public ScheduleViewHolder(@NonNull View itemView) {
             super(itemView);
             this.textViewTitle = itemView.findViewById(R.id.textViewTitle);
+            this.textViewLabelDescription = itemView.findViewById(R.id.textViewLabelDescription);
             this.textViewDescription = itemView.findViewById(R.id.textViewDescription);
             this.textViewTeacherName = itemView.findViewById(R.id.textViewTeacherName);
             this.textViewNumberOfRoom = itemView.findViewById(R.id.textViewNumberOfRoom);
