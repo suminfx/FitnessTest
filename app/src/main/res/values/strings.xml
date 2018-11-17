@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">FitnessTest</string>
+    <string name="test_title">Тренировка на турнике</string>
+    <string name="test_description">Программа занятий на турнике состоит из упражнений, направленных на развитие и укрепление мышц спины, плеч, пресса, бицепсов, трицепсов, грудных мышц. Тренироваться на турнике рекомендуется через день, по 30–40 минут. Перед каждой тренировкой нужно разминаться в течение 15 минут.</string>
+    <string name="test_teacher_name">Семенова Лариса Николаевна</string>
+    <string name="text_number_of_room">37</string>
+    <string name="test_time">10.00 - 10.45</string>
+
+    <string name="label_description">Описание:</string>
+    <string name="label_teacher_name">Преподаватель:</string>
+    <string name="label_number_of_room">Зал №:</string>
+    <string name="label_time">Время:</string>
+    <string name="test_day_of_week">Понедельник</string>
+    <string name="warning_no_internet_connection">Отсутствует интернет подключение. Повторите попытку позже&#8230;</string>
+    <string name="warning_error_with_loading">Ошибка загрузки данных. Возможно медленное интернет соединение. Пожалуйста повторите попытку позже&#8230;</string>
+
+    <string-array name="days_of_week">
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+        <item>Воскресенье</item>
+    </string-array>
+</resources>

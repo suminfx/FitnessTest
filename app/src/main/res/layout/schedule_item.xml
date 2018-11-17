@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewDayOfWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_day_of_week"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_gravity="center"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical|center_horizontal"
+                tools:text="@string/test_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/cardview_light_background"
+                android:padding="@dimen/main_padding_inside_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewLabelDescription"
+                android:layout_marginStart="@dimen/margin_start_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_description"
+                android:textColor="@color/colorPrimaryText"
+                android:padding="@dimen/main_padding_inside_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/test_description"
+                android:textColor="@color/colorSecondaryText"
+                android:padding="@dimen/main_padding_inside_text"
+                android:layout_marginStart="@dimen/margin_start_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewLabelDescription" />
+
+            <TextView
+                android:id="@+id/textViewLabelTeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_teacher_name"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_marginStart="@dimen/margin_start_text"
+                android:padding="@dimen/main_padding_inside_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription" />
+
+
+            <TextView
+                android:id="@+id/textViewTeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/test_teacher_name"
+                android:padding="@dimen/main_padding_inside_text"
+                app:layout_constraintStart_toEndOf="@id/textViewLabelTeacherName"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelTeacherName" />
+
+            <TextView
+                android:id="@+id/textViewLabelNumberOfRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_number_of_room"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_marginStart="@dimen/margin_start_text"
+                android:padding="@dimen/main_padding_inside_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewTeacherName" />
+
+            <TextView
+                android:id="@+id/textViewNumberOfRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/text_number_of_room"
+                android:padding="@dimen/main_padding_inside_text"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelNumberOfRoom"
+                app:layout_constraintStart_toEndOf="@id/textViewLabelNumberOfRoom"/>
+
+            <TextView
+                android:id="@+id/textViewLabelTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_time"
+                android:padding="@dimen/main_padding_inside_text"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_marginStart="@dimen/margin_start_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewNumberOfRoom" />
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/main_padding_inside_text"
+                tools:text="@string/test_time"
+                app:layout_constraintTop_toTopOf="@id/textViewLabelTime"
+                app:layout_constraintStart_toEndOf="@id/textViewLabelTime"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
